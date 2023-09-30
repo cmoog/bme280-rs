@@ -18,9 +18,9 @@
 #![cfg_attr(not(feature = "async"), deny(unstable_features))]
 // Turn off no_std if we turn on the "with_std" feature
 #![cfg_attr(not(feature = "with_std"), no_std)]
+#![feature(impl_trait_in_assoc_type)]
 #![cfg_attr(
     feature = "async",
-    feature(generic_associated_types),
     feature(type_alias_impl_trait)
 )]
 
@@ -69,7 +69,6 @@
 //! ```
 
 pub mod i2c;
-pub mod spi;
 
 #[cfg(feature = "async")]
 use core::future::Future;
